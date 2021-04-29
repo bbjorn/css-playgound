@@ -34,9 +34,21 @@ section {
   height: 100vh;
 
   z-index: 0;
-  display: none;
 }
 
+section:target {
+  display: grid;
+}
+
+section:target ~ section:last-child {
+  display: grid;
+}
+
+section,
+section:target ~ #0 {
+  display: none;
+}
+#0,
 section:target {
   display: grid;
 }
