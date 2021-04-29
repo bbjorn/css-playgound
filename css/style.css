@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/* Light bulb buttons */
+@import "lights.css";
+/* Spinning Wheel */
+@import "wheel.css";
+/* Dynamic Blurred Backgrounds */
+@import "blur.css";
+/* Drop Grid */
+@import "dropgrid.css";
+
+:root {
+  --clr-bg: hsl(227, 17%, 20%);
+  --clr-light-100: hsl(53, 100%, 98%);
+  --clr-light-80: hsl(215, 100%, 95%, 0.8);
+  --clr-light-60: hsla(215, 100%, 95%, 0.6);
+  --clr-light-40: hsl(215, 100%, 95%, 0.1);
+  --clr-light-20: hsl(53, 100%, 98%, 0.033);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+section {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 10em;
+  width: 100%;
+  height: 100vh;
+
+  z-index: 0;
+}
+
+section:target {
+  display: grid;
+}
+
+section:target ~ section:last-child {
+  display: grid;
+}
+
+section,
+section:target ~ #0 {
+  display: none;
+}
+#0,
+section:target {
+  display: grid;
+}
+
+.title {
+  position: absolute;
+  top: 2em;
+  font-size: 2rem;
+  color: var(--clr-light-100);
+}
+
+.navbtn {
+  position: absolute;
+  color: transparent;
+  width: 10%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity ease-in 750ms;
+}
+
+.navbtn::before,
+.navbtn::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  border-radius: 9999px;
+  width: 50%;
+  height: 0.3em;
+}
+
+.navbtn:hover {
+  opacity: 1;
+  transition: opacity ease-out 750ms;
+}
+
+.navbtn__prev {
+  left: 0;
+}
+
+.navbtn__prev::before {
+  top: calc(50vh - 1px);
+  left: 35%;
+  transform-origin: left;
+  transform: rotate(65deg);
+}
+
+.navbtn__prev::after {
+  top: calc(50vh + 1px);
+
+  left: 35%;
+  transform-origin: left;
+  transform: rotate(-65deg);
+}
+
+.navbtn__next {
+  right: 0;
+}
+
+.navbtn__next::before {
+  top: calc(50vh + 1px);
+  right: 35%;
+  transform-origin: right;
+  transform: rotate(65deg);
+}
+
+.navbtn__next::after {
+  top: calc(50vh - 1px);
+  right: 35%;
+  transform-origin: right;
+  transform: rotate(-65deg);
+}
+
+/* Welcome */
+
+.welcome {
+  background: linear-gradient(45deg, hsl(199, 86%, 34%), hsl(276, 100%, 19%));
+}
+
+.welcome__box {
+  width: 50%;
+  min-width: 18em;
+  padding: 2em;
+  border: solid 5px white;
+  background-color: black;
+  color: white;
+}
+
+.welcome h1 {
+  font-size: max(1.5rem, 2.1vw);
+  text-align: center;
+}
+
+.welcome__bg {
+  position: absolute;
+  z-index: -1;
+  width: 150vmax;
+  height: 150vmax;
+  background: linear-gradient(45deg, hsl(32, 90%, 55%), hsl(276, 100%, 19%));
+  transform: rotate(15deg);
+  animation: spin 60s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

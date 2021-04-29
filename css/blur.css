@@ -1,0 +1,97 @@
+.blur {
+  position: relative;
+  background: url(https://source.unsplash.com/800x800/?nature);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+.blur__box {
+  width: 70%;
+  height: 50%;
+  border: white 5px solid;
+  padding: 0 1em;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+}
+
+.blur__box h1 {
+  background-color: white;
+  text-align: center;
+  padding: 0.5em;
+}
+.blur__box div {
+  background-color: white;
+  text-align: center;
+  padding: 0 0.5em;
+}
+.blur__background {
+  background: url(https://source.unsplash.com/800x800/?nature);
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  clip-path: polygon(
+    0% 0%,
+    0% 100%,
+    15% 100%,
+    15% 25%,
+    85% 25%,
+    85% 75%,
+    15% 75%,
+    15% 100%,
+    100% 100%,
+    100% 0%
+  );
+  transition: filter ease 1000ms;
+}
+
+.blur__box:focus + .blur__background,
+.blur__box:hover + .blur__background {
+  filter: blur(4px);
+}
+
+@media screen and (min-width: 800px) {
+  .blur {
+    background: url(https://source.unsplash.com/1600x900/?nature);
+  }
+
+  .blur__background {
+    background: url(https://source.unsplash.com/1600x900/?nature);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .blur {
+    background: url(https://source.unsplash.com/1920x1200/?nature);
+  }
+
+  .blur__background {
+    background: url(https://source.unsplash.com/1920x1200/?nature);
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .blur {
+    background: url(https://source.unsplash.com/2560x1151/?nature);
+  }
+
+  .blur__background {
+    background: url(https://source.unsplash.com/2560x1151/?nature);
+  }
+}
+
+@media screen and (min-width: 2500px) {
+  .blur {
+    background: url(https://source.unsplash.com/3840x2160/?nature);
+  }
+
+  .blur__background {
+    background: url(https://source.unsplash.com/3840x2160/?nature);
+  }
+}

@@ -1,0 +1,91 @@
+.wheel {
+  --wheel-bg: linear-gradient(
+    white 0,
+    hsl(0, 0%, 90%) 35%,
+    hsl(0, 0%, 80%) 50%,
+    hsl(0, 0%, 90%) 65%,
+    white 100%
+  );
+  background-color: rgb(123, 196, 177);
+  background: linear-gradient(-15deg, hsl(164, 38%, 35%), hsl(164, 38%, 63%));
+  perspective: 800px;
+}
+
+.wheel__angle {
+  transform: rotateX(0deg) rotateY(-45deg);
+  transform-style: preserve-3d;
+  padding: 2em;
+  height: 16em;
+  width: 12em;
+}
+
+.wheel__spinner {
+  position: absolute;
+  height: 16em;
+  width: 12em;
+  background: var(--wheel-bg); /*, gradiant());*/
+  border-radius: 1em;
+  transform: rotateX(0deg);
+  transform-style: preserve-3d;
+
+  animation: wheel 10s linear infinite;
+}
+
+@keyframes wheel {
+  0% {
+    transform: rotateX(0deg) rotateY(0);
+  }
+  50% {
+    transform: rotateX(180deg) rotateY(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(0);
+  }
+}
+
+.wheel__spinner::before,
+.wheel__spinner::after {
+  content: "";
+  position: absolute;
+  height: 16em;
+  width: 12em;
+  top: 0;
+  left: 0;
+  border-radius: 1em;
+  background: var(--wheel-bg);
+}
+
+.wheel__spinner::before {
+  transform: rotateX(60deg);
+}
+
+.wheel__spinner::after {
+  transform: rotateX(-60deg);
+}
+
+.wheel__shadow {
+  position: absolute;
+  height: 2em;
+  width: 12em;
+  background: transparent;
+
+  transform-style: flat;
+}
+
+.wheel__shadow::before,
+.wheel__shadow::after {
+  content: "";
+  position: absolute;
+  height: 2em;
+  width: 12em;
+  background: transparent;
+}
+
+.wheel__shadow::before {
+  transform: rotateY(0deg);
+  box-shadow: 0em 14em 4em rgba(0, 0, 0, 0.4);
+}
+.wheel__shadow::after {
+  transform: rotateY(-45deg);
+  box-shadow: 0em 14em 4em rgba(0, 0, 0, 0.4);
+}

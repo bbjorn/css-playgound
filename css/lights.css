@@ -1,0 +1,71 @@
+.lights {
+  background: var(--clr-bg);
+  background: linear-gradient(hsl(209, 85%, 10%), hsl(210, 85%, 20%));
+  grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
+  padding: 0 15%;
+  margin: 0 auto;
+  font-size: 1.3vw;
+}
+
+.lights::after {
+  content: "";
+  position: absolute;
+  height: 1.33px;
+  width: 100%;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  top: calc(50% - 2.5em);
+  z-index: -10;
+}
+
+.lights__btn {
+  position: relative;
+  display: block;
+  font-size: 2em;
+  background-color: var(--clr-light-40);
+  width: 1.5em;
+  height: 1.5em;
+  text-decoration: none;
+  color: var(--clr-bg);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 2.5em;
+  transition: box-shadow cubic-bezier(0.99, 0, 0.59, 1.28) 750ms,
+    border ease-in 150ms 500ms, background-color ease-in 150ms 500ms;
+}
+
+.lights__btn:hover {
+  background-color: var(--clr-light-100);
+  box-shadow: 0 0 1em var(--clr-light-100), 0 0 0.5em var(--clr-light-100),
+    0 0 1em var(--clr-light-100), 0 0 2em var(--clr-light-100),
+    0 0 0 1em var(--clr-light-20), 0 0 0 2em var(--clr-light-20),
+    0 0 0 3em var(--clr-light-20), 0 0 0 4em var(--clr-light-20),
+    0 0 0 5em var(--clr-light-20);
+  border: 1px solid var(--clr-light-100);
+  transition: box-shadow cubic-bezier(0.99, 0, 0.59, 1.28) 750ms,
+    border ease-in 250ms, background-color ease-in 250ms;
+}
+
+.lights__btn::after {
+  content: "";
+  position: absolute;
+  width: 0.5em;
+  height: 0.6em;
+  bottom: 1.4em;
+  background: hsla(0, 0%, 50%, 0.4);
+  z-index: -1;
+  border-radius: 0.25em 0.25em 0 0;
+}
+
+.lights__btn::before {
+  content: "π";
+  position: absolute;
+
+  bottom: 0.6em;
+  color: hsl(210, 100%, 10%);
+  font-size: 0.8em;
+  font-family: cursive;
+  z-index: -1;
+  border-radius: 0 0 0.25em 0.25em;
+  transform: rotate(180deg);
+}
