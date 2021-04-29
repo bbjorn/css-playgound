@@ -171,6 +171,16 @@ section:target {
   font-size: 1.3vw;
 }
 
+.lights::after {
+  content: "";
+  position: absolute;
+  height: 1.33px;
+  width: 100%;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  top: calc(50% - 2.5em);
+  z-index: -10;
+}
+
 .lights__btn {
   position: relative;
   display: block;
@@ -205,22 +215,23 @@ section:target {
   position: absolute;
   width: 0.5em;
   height: 0.6em;
-  top: 1.4em;
+  bottom: 1.4em;
   background: hsla(0, 0%, 50%, 0.4);
   z-index: -1;
-  border-radius: 0 0 0.25em 0.25em;
+  border-radius: 0.25em 0.25em 0 0;
 }
 
 .lights__btn::before {
   content: "π";
   position: absolute;
 
-  top: 0.6em;
+  bottom: 0.6em;
   color: hsl(210, 100%, 10%);
   font-size: 0.8em;
   font-family: cursive;
   z-index: -1;
   border-radius: 0 0 0.25em 0.25em;
+  transform: rotate(180deg);
 }
 /* Spinning Wheel */
 
