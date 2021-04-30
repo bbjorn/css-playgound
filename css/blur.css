@@ -1,9 +1,8 @@
 .blur {
   position: relative;
-  background: url(https://source.unsplash.com/800x800/?nature);
+  background: black url(https://source.unsplash.com/800x800/?nature);
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: black;
 }
 
 .blur__box {
@@ -58,40 +57,40 @@
 
 @media screen and (min-width: 800px) {
   .blur {
-    background: url(https://source.unsplash.com/1600x900/?nature);
+    background: black url(https://source.unsplash.com/1600x900/?nature);
   }
 
   .blur__background {
-    background: url(https://source.unsplash.com/1600x900/?nature);
+    background: black url(https://source.unsplash.com/1600x900/?nature);
   }
 }
 
 @media screen and (min-width: 1600px) {
   .blur {
-    background: url(https://source.unsplash.com/1920x1200/?nature);
+    background: black url(https://source.unsplash.com/1920x1200/?nature);
   }
 
   .blur__background {
-    background: url(https://source.unsplash.com/1920x1200/?nature);
+    background: black url(https://source.unsplash.com/1920x1200/?nature);
   }
 }
 
 @media screen and (min-width: 1900px) {
   .blur {
-    background: url(https://source.unsplash.com/2560x1151/?nature);
+    background: black url(https://source.unsplash.com/2560x1151/?nature);
   }
 
   .blur__background {
-    background: url(https://source.unsplash.com/2560x1151/?nature);
+    background: black url(https://source.unsplash.com/2560x1151/?nature);
   }
 }
 
 @media screen and (min-width: 2500px) {
   .blur {
-    background: url(https://source.unsplash.com/3840x2160/?nature);
+    background: black url(https://source.unsplash.com/3840x2160/?nature);
   }
 
   .blur__background {
-    background: url(https://source.unsplash.com/3840x2160/?nature);
+    background: black url(https://source.unsplash.com/3840x2160/?nature);
   }
 }
