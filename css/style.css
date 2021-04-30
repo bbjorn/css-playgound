@@ -7,8 +7,9 @@
 @import "blur.css";
 /* Drop Grid */
 @import "dropgrid.css";
-
-:root {
+/* Snake */
+@import "snake.css";
+:root  {
   --clr-bg: hsl(227, 17%, 20%);
   --clr-light-100: hsl(53, 100%, 98%);
   --clr-light-80: hsl(215, 100%, 95%, 0.8);
@@ -160,7 +161,7 @@ section:target {
   height: 150vmax;
   background: linear-gradient(45deg, hsl(32, 90%, 55%), hsl(276, 100%, 19%));
   transform: rotate(15deg);
-  animation: spin 60s linear infinite;
+  animation: spin 60s ease infinite;
 }
 
 @keyframes spin {
