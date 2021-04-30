@@ -58,6 +58,7 @@ section,
 section:target ~ #0 {
   display: none;
 }
+
 #0,
 section:target {
   display: grid;
@@ -167,4 +168,60 @@ section:target {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+/* Drop Grid */
+
+.dropgrid {
+  background: url(https://source.unsplash.com/2560x1151/?city,skyline);
+  background-position: center;
+  background-size: auto 100%;
+  /* filter: sepia(100%);*/
+}
+
+.dropgrid__grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.dropgrid__empty {
+  border: 0.25em black solid;
+}
+
+.dropgrid__filled {
+  grid-row: 2/3;
+  border: 0.25em black solid;
+}
+
+.dropgrid__child {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  transform: translateY(-250%);
+  opacity: 0;
+  transition: opacity ease-in 250ms 250ms, transform ease-in 750ms;
+}
+
+.dropgrid__filled:hover .dropgrid__child {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.dropgrid__filled:hover .dropgrid__picture {
+  opacity: 1;
+}
+
+.dropgrid__picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 1000ms ease;
 }
