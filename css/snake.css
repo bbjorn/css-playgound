@@ -1,7 +1,6 @@
 /* Snake */
 .snake {
-  background: linear-gradient(0deg, rgb(100, 82, 54), rgb(11, 63, 94));
-  counter-reset: delay;
+  background: linear-gradient(185deg, black, #1a323d, #e2cf8f);
 }
 
 .snake__body {
@@ -25,7 +24,6 @@
   top: 0;
   left: 0;
   border: 0.5em solid var(--snake-glow-clr);
-  border-radius: 50%;
   box-sizing: content-box;
   transform: translateY(-5rem);
 }
