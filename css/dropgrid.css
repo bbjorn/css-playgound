@@ -38,6 +38,7 @@ section:target .dropgrid__child {
   justify-content: center;
 }
 
+.dropgrid__filled:focus .dropgrid__child,
 .dropgrid__filled:hover .dropgrid__child {
   transform: translate(0);
   opacity: 1;
@@ -66,6 +67,7 @@ section:target .dropgrid__child {
   filter: sepia(40%);
 }
 
+.dropgrid__filled:focus::after,
 .dropgrid__filled:hover::after {
   opacity: 1;
 }
