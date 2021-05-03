@@ -17,7 +17,8 @@
 
 .dropgrid__filled {
   max-height: 100%;
-  box-shadow: inset 0 0 5em rgb(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 5em 5vmax black;
 }
 
 /* section:target is here to prevent a bug where the 
@@ -38,6 +39,10 @@ section:target .dropgrid__child {
   justify-content: center;
 }
 
+.dropgrid__child {
+  z-index: 10;
+}
+
 .dropgrid__filled:focus .dropgrid__child,
 .dropgrid__filled:hover .dropgrid__child {
   transform: translate(0);
@@ -49,9 +54,9 @@ section:target .dropgrid__child {
   z-index: -2;
 }
 
-.dropgrid__filled::after {
+.dropgrid__filled::before {
   content: "";
-  background-size: 100% auto;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-color: black;
@@ -61,31 +66,32 @@ section:target .dropgrid__child {
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: -1;
+  z-index: 0;
   opacity: 0;
   transition: opacity 1000ms ease;
   filter: sepia(40%);
+  pointer-events: none;
 }
 
-.dropgrid__filled:focus::after,
-.dropgrid__filled:hover::after {
+.dropgrid__filled:focus::before,
+.dropgrid__filled:hover::before {
   opacity: 1;
 }
 
-.dropgrid--1::after {
-  background: url(https://source.unsplash.com/800x1200/?people);
+.dropgrid--1::before {
+  background-image: url(https://source.unsplash.com/800x1200/?people);
 }
 
-.dropgrid--2::after {
-  background: url(https://source.unsplash.com/800x1200/?woods);
+.dropgrid--2::before {
+  background-image: url(https://source.unsplash.com/800x1200/?woods);
 }
 
-.dropgrid--3::after {
-  background: url(https://source.unsplash.com/800x1200/?city);
+.dropgrid--3::before {
+  background-image: url(https://source.unsplash.com/800x1200/?city);
 }
 
-.dropgrid--4::after {
-  background: url(https://source.unsplash.com/800x1200/?ocean);
+.dropgrid--4::before {
+  background-image: url(https://source.unsplash.com/800x1200/?ocean);
 }
 
 @media screen and (min-width: 800px) {
@@ -103,43 +109,39 @@ section:target .dropgrid__child {
     grid-row: 2/3;
   }
 
-  .dropgrid__filled::after {
-    background-size: auto 100%;
-  }
-
   /* 1920x1200 */
-  .dropgrid--1::after {
-    background: url(https://source.unsplash.com/1920x1200/?people);
+  .dropgrid--1::before {
+    background-image: url(https://source.unsplash.com/1920x1200/?people);
   }
 
-  .dropgrid--2::after {
-    background: url(https://source.unsplash.com/1920x1200/?woods);
+  .dropgrid--2::before {
+    background-image: url(https://source.unsplash.com/1920x1200/?woods);
   }
 
-  .dropgrid--3::after {
-    background: url(https://source.unsplash.com/1920x1200/?city);
+  .dropgrid--3::before {
+    background-image: url(https://source.unsplash.com/1920x1200/?city);
   }
 
-  .dropgrid--4::after {
-    background: url(https://source.unsplash.com/1920x1200/?ocean);
+  .dropgrid--4::before {
+    background-image: url(https://source.unsplash.com/1920x1200/?ocean);
   }
 }
 
 @media screen and (min-width: 1920px) {
   /* 3840x2160 */
-  .dropgrid--1::after {
-    background: url(https://source.unsplash.com/3840x2160/?people);
+  .dropgrid--1::before {
+    background-image: url(https://source.unsplash.com/3840x2160/?people);
   }
 
-  .dropgrid--2::after {
-    background: url(https://source.unsplash.com/3840x2160/?woods);
+  .dropgrid--2::before {
+    background-image: url(https://source.unsplash.com/3840x2160/?woods);
   }
 
-  .dropgrid--3::after {
-    background: url(https://source.unsplash.com/3840x2160/?city);
+  .dropgrid--3::before {
+    background-image: url(https://source.unsplash.com/3840x2160/?city);
   }
 
-  .dropgrid--4::after {
-    background: url(https://source.unsplash.com/3840x2160/?ocean);
+  .dropgrid--4::before {
+    background-image: url(https://source.unsplash.com/3840x2160/?ocean);
   }
 }
