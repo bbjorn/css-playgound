@@ -21,9 +21,7 @@
   box-shadow: inset 0 0 5em 5vmax black;
 }
 
-/* section:target is here to prevent a bug where the 
-  dropgrid__child would be displayed in the previous page */
-section:target .dropgrid__child {
+.dropgrid__child {
   border: 0.5em solid black;
   box-shadow: inset 0 0 0 0.25em white;
   background-color: black;
