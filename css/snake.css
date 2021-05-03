@@ -77,6 +77,11 @@
   }
 }
 
+/* Snake head */
+.snake__body0::before {
+  font-size: 1.5rem;
+}
+
 /* Snake parts */
 
 .snake__body0::after {
