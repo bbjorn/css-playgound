@@ -13,17 +13,31 @@
 }
 
 .snake__referense {
-  transform: translateY(4.5rem);
+  transform: translateY(5rem);
   position: absolute;
   border-radius: 50%;
+}
+
+.snake__body::before {
+  content: "";
+  position: absolute;
+  top: -0.5em;
+  left: -0.5em;
+  width: 1em;
+  height: 1em;
+  background: var(--snake-glow-clr);
+  box-sizing: content-box;
+  transform: translateY(-5rem);
+  box-shadow: 0 0 1em var(--snake-glow-clr), 0 0 0.5em var(--snake-clr);
 }
 
 .snake__body::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  border: 0.5em solid var(--snake-glow-clr);
+  top: 0em;
+  left: 0em;
+  box-shadow: 0 0 2em 0.5em var(--snake-glow-clr),
+    0 0 1em 0.5em var(--snake-clr);
   box-sizing: content-box;
   transform: translateY(-5rem);
 }
@@ -32,28 +46,28 @@
 
 @keyframes snake-glow {
   from {
-    box-shadow: 0 0 0.5rem var(--snake-glow-clr), 0 0 1rem var(--snake-clr);
+    transform: translateY(-5rem) scale(0.5);
   }
   to {
-    box-shadow: 0 0 2rem var(--snake-clr), 0 0 0.5rem var(--snake-glow-clr);
+    transform: translateY(-5rem) scale(1);
   }
 }
 
 @keyframes snake-move {
   0% {
-    transform: translateY(4.5rem) rotate(0deg);
+    transform: translateY(5rem) rotate(0deg);
   }
   49.999% {
-    transform: translateY(4.5rem) rotate(0deg);
+    transform: translateY(5rem) rotate(0deg);
   }
   50% {
-    transform: translateY(-4.5rem) rotate(180deg);
+    transform: translateY(-5rem) rotate(180deg);
   }
   99.999% {
-    transform: translateY(-4.5rem) rotate(180deg);
+    transform: translateY(-5rem) rotate(180deg);
   }
   100% {
-    transform: translateY(4.5rem) rotate(0deg);
+    transform: translateY(5rem) rotate(0deg);
   }
 }
 
@@ -66,7 +80,7 @@
 /* Snake parts */
 
 .snake__body0::after {
-  animation: snake-glow 500ms infinite linear;
+  animation: snake-glow 500ms infinite alternate linear;
 }
 .snake__body0 {
   --snake-clr: hsl(0, 38%, 59%);
@@ -78,7 +92,7 @@
 }
 
 .snake__body1::after {
-  animation: snake-glow 500ms infinite linear;
+  animation: snake-glow 500ms infinite alternate linear;
 }
 .snake__body1 {
   --snake-clr: hsl(36, 38%, 59%);
@@ -198,7 +212,7 @@
 }
 
 .snake__body11::after {
-  animation: snake-glow 500ms infinite linear;
+  animation: snake-glow 500ms infinite linear alternate;
 }
 .snake__body11 {
   --snake-clr: hsl(54, 38%, 59%);
