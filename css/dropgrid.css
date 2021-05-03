@@ -50,7 +50,8 @@ section:target .dropgrid__child {
 
 .dropgrid__filled::after {
   content: "";
-  background-position: center;
+  background-size: 100% auto;
+  background-position: center center;
   background-repeat: no-repeat;
   background-color: black;
   position: absolute;
@@ -98,6 +99,10 @@ section:target .dropgrid__child {
   .dropgrid__filled {
     max-height: unset;
     grid-row: 2/3;
+  }
+
+  .dropgrid__filled::after {
+    background-size: auto 100%;
   }
 
   /* 1920x1200 */
