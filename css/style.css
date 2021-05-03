@@ -138,6 +138,7 @@ section:target {
 
 .welcome {
   background: linear-gradient(45deg, hsl(199, 86%, 34%), hsl(276, 100%, 19%));
+  display: grid;
 }
 
 .welcome__box {
