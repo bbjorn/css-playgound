@@ -98,7 +98,7 @@
     grid-template-rows: repeat(3, 1fr);
   }
 
-  section:target .dropgrid__child {
+  .dropgrid__child {
     transform: translate(0, -250%);
   }
 
