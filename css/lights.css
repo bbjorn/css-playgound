@@ -19,6 +19,7 @@
 
 .lights__label,
 .lights__btn {
+  cursor: pointer;
   position: relative;
   display: block;
   font-size: 2em;
