@@ -17,6 +17,7 @@
   z-index: -10;
 }
 
+.lights__label,
 .lights__btn {
   position: relative;
   display: block;
@@ -35,6 +36,7 @@
     border ease-in 150ms 500ms, background-color ease-in 150ms 500ms;
 }
 
+.lights__toggle:checked ~ .lights__label,
 .lights__btn:focus,
 .lights__btn:hover {
   background-color: var(--clr-light-100);
@@ -48,6 +50,7 @@
     border ease-in 250ms, background-color ease-in 250ms;
 }
 
+.lights__label::after,
 .lights__btn::after {
   content: "";
   position: absolute;
@@ -59,6 +62,7 @@
   border-radius: 0.25em 0.25em 0 0;
 }
 
+.lights__label::before,
 .lights__btn::before {
   content: "π";
   position: absolute;
@@ -71,3 +75,13 @@
   border-radius: 0 0 0.25em 0.25em;
   transform: rotate(180deg);
 }
+
+.lights__toggle {
+  display: none;
+}
+
+/* Just to explain how to turn on and off the lights for checkbox. 
+.lights__toggle:checked ~ .lights__label {
+  //Turn on lights. 
+}
+*/
