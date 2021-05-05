@@ -137,7 +137,7 @@ section:target {
 /* Welcome */
 
 .welcome {
-  background: linear-gradient(45deg, hsl(199, 86%, 34%), hsl(276, 100%, 19%));
+  background: black;
   display: grid;
 }
 
