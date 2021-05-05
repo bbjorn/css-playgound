@@ -37,8 +37,8 @@
     border ease-in 150ms 500ms, background-color ease-in 150ms 500ms;
 }
 
-.lights__toggle:checked ~ .lights__label,
-.lights__toggle:checked ~ .lights__btn,
+.lights__toggle:checked + .lights__label,
+.lights__toggle:checked + .lights__btn,
 .lights__btn:focus,
 .lights__btn:hover {
   background-color: var(--clr-light-100);
