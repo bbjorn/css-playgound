@@ -171,3 +171,325 @@ section:target {
     transform: rotate(360deg);
   }
 }
+
+/* Frog */
+.frog {
+  background-color: cornflowerblue;
+  background-image: linear-gradient(
+    0deg,
+    rgb(65, 59, 44) 0 30%,
+    transparent 0 100%
+  );
+}
+
+.frog__shadow {
+  background: rgba(0, 0, 0, 0.2);
+  width: 10em;
+  height: 10em;
+  position: absolute;
+  bottom: -5em;
+  border-radius: 50%;
+  transform: rotateX(80deg);
+  animation: frog-shadow 5000ms ease-out infinite alternate 7500ms;
+}
+
+@keyframes frog-shadow {
+  to {
+    transform: rotateX(80deg) scale(0.5);
+  }
+}
+.frog__body {
+  --frog-colour-900: hsl(125, 100%, 20%);
+  --frog-colour-400: hsl(125, 100%, 30%);
+  --frog-colour-100: hsl(125, 60%, 80%);
+  position: absolute;
+  bottom: 0;
+  animation: frog-jump 5000ms ease-out infinite alternate 7500ms;
+}
+
+.frog__leg {
+  width: 2em;
+  height: 7.5em;
+
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0em;
+  transform-origin: bottom;
+  animation: frog-knee 10000ms ease-in-out infinite;
+}
+
+.frog__leg.frog--left {
+  background-image: radial-gradient(
+    farthest-corner at 100% 30%,
+    var(--frog-colour-900) 0% 50%,
+    var(--frog-colour-400) 0 100%
+  );
+  left: 0;
+  transform: rotate(-15deg);
+}
+
+.frog__leg.frog--right {
+  background-image: radial-gradient(
+    farthest-corner at 0% 30%,
+    var(--frog-colour-900) 0% 50%,
+    var(--frog-colour-400) 0 100%
+  );
+  right: 0;
+  transform: rotate(15deg);
+}
+
+.frog__toes {
+  position: absolute;
+  background: var(--frog-colour-900);
+
+  --toe-gradient: radial-gradient(
+    at 50% 40%,
+    var(--frog-colour-400) 0% 35%,
+    var(--frog-colour-900) 0 100%
+  );
+  background-image: var(--toe-gradient);
+  width: 1em;
+  height: 1em;
+  bottom: 0em;
+  border-radius: 50%;
+  left: 0.5em;
+  z-index: 1;
+}
+
+.frog--left .frog__toes {
+  transform: rotate(15deg);
+}
+
+.frog--right .frog__toes {
+  transform: rotate(-15deg);
+}
+
+.frog__toes::before,
+.frog__toes::after {
+  content: "";
+  position: absolute;
+  background: var(--frog-colour-900);
+  background-image: var(--toe-gradient);
+  width: 1em;
+  height: 1em;
+  bottom: 0;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.frog__toes::before {
+  left: 0.75em;
+}
+
+.frog__toes::after {
+  right: 0.75em;
+}
+
+@keyframes frog-knee {
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+  }
+}
+
+@keyframes frog-jump {
+  to {
+    transform: translateY(-150%);
+  }
+}
+
+/* Head */
+.frog__head {
+  background: linear-gradient(
+    var(--frog-colour-400) 0 75%,
+    var(--frog-colour-100) 0 100%
+  );
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Nostrils */
+.frog__head::before,
+.frog__head::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  width: 0.4em;
+  height: 0.25em;
+  background-color: rgb(41, 29, 12);
+  border-radius: 50%;
+}
+
+.frog__head::before {
+  left: 40%;
+  transform: rotate(-10deg);
+}
+.frog__head::after {
+  right: 40%;
+  transform: rotate(10deg);
+}
+
+/* Eyes */
+.frog__eye {
+  position: absolute;
+  background: var(--frog-colour-400);
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+}
+
+.frog__eye::before,
+.frog__eye::after {
+  transform: scaleY(1);
+}
+
+.frog__eye::before {
+  content: "";
+  position: absolute;
+  top: 12.5%;
+  left: 12.5%;
+  right: 12.5%;
+  bottom: 12.5%;
+  border-radius: inherit;
+  background-color: white;
+}
+
+.frog__eye::after {
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  right: 25%;
+  bottom: 25%;
+  border-radius: inherit;
+  background-color: black;
+}
+
+.frog__eye.frog--left {
+  left: 0;
+}
+
+.frog__eye.frog--right {
+  right: 0;
+}
+
+.frog__eye::before,
+.frog__eye::after {
+  transform: scaleY(1);
+  animation: frog-blink 10000ms linear infinite;
+}
+
+@keyframes frog-blink {
+  47.5% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.05);
+  }
+  52.5% {
+    transform: scaleY(1);
+  }
+}
+
+/* Mouth */
+.frog__jaw {
+  position: absolute;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.frog__mouth {
+  position: absolute;
+  background: var(--frog-colour-100);
+  width: 7em;
+  height: 3em;
+  border-radius: 50%;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.frog__mouth::before,
+.frog__mouth::after {
+  content: "";
+  position: absolute;
+  height: 1.5em;
+  width: 3em;
+  border-radius: 50%;
+  background: var(--frog-colour-400);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.frog__mouth::before {
+  left: -3em;
+}
+
+.frog__mouth::after {
+  right: -3em;
+}
+
+/* Selectors */
+
+.frog__canvas {
+  position: absolute;
+  top: 10em;
+  display: flex;
+
+  padding: 0.5em;
+  color: white;
+  justify-content: space-around;
+  width: 80vw;
+  height: calc(100vh - 20em);
+}
+
+.frog__radio {
+  display: none;
+}
+
+.frog__label {
+  height: 1.5em;
+  cursor: pointer;
+  position: relative;
+}
+
+.frog__label::before {
+  content: "";
+  position: absolute;
+  bottom: -0.2em;
+  left: 0;
+  width: 100%;
+  height: 0.2em;
+  background-color: white;
+  transform: scaleX(0);
+  transition: transform 250ms ease;
+}
+
+.frog__radio:checked + .frog__label::before {
+  transform: scaleX(1);
+}
+
+#frog-red:checked ~ .frog__body {
+  --frog-colour-900: hsl(0, 100%, 23%);
+  --frog-colour-400: hsl(0, 100%, 30%);
+  --frog-colour-100: hsl(0, 60%, 80%);
+}
+
+#frog-blue:checked ~ .frog__body {
+  --frog-colour-900: hsl(200, 100%, 20%);
+  --frog-colour-400: hsl(200, 100%, 30%);
+  --frog-colour-100: hsl(200, 60%, 80%);
+}
+
+#frog-purple:checked ~ .frog__body {
+  --frog-colour-900: hsl(270, 100%, 30%);
+  --frog-colour-400: hsl(270, 100%, 40%);
+  --frog-colour-100: hsl(270, 60%, 80%);
+}
