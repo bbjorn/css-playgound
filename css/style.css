@@ -191,7 +191,7 @@ section:target {
   bottom: -5em;
   border-radius: 50%;
   transform: rotateX(80deg);
-  animation: frog-shadow 5000ms ease-out infinite alternate 7500ms;
+  animation: frog-shadow 10000ms ease-out infinite alternate;
 }
 
 @keyframes frog-shadow {
@@ -205,7 +205,7 @@ section:target {
   --frog-colour-100: hsl(125, 60%, 80%);
   position: absolute;
   bottom: 0;
-  animation: frog-jump 5000ms ease-out infinite alternate 7500ms;
+  animation: frog-jump 10000ms ease-out infinite alternate;
 }
 
 .frog__leg {
@@ -216,7 +216,7 @@ section:target {
   position: absolute;
   bottom: 0em;
   transform-origin: bottom;
-  animation: frog-knee 10000ms ease-in-out infinite;
+  animation: frog-knee 5000ms ease-in-out infinite alternate 1500ms;
 }
 
 .frog__leg.frog--left {
@@ -287,16 +287,26 @@ section:target {
 }
 
 @keyframes frog-knee {
-  25% {
+  100% {
     transform: rotate(0deg);
-  }
-  50% {
   }
 }
 
 @keyframes frog-jump {
-  to {
+  50% {
+    transform: translateY(0);
+  }
+  100% {
     transform: translateY(-150%);
+  }
+}
+
+@keyframes frog-shadow {
+  50% {
+    transform: rotateX(80deg) scale(1);
+  }
+  100% {
+    transform: rotateX(80deg) scale(0.5);
   }
 }
 
@@ -380,7 +390,7 @@ section:target {
 .frog__eye::before,
 .frog__eye::after {
   transform: scaleY(1);
-  animation: frog-blink 10000ms linear infinite;
+  animation: frog-blink 9000ms linear infinite;
 }
 
 @keyframes frog-blink {
