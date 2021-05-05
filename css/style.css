@@ -175,7 +175,8 @@ section:target {
 /* Frog */
 .frog {
   background-color: cornflowerblue;
-  background-image: linear-gradient(
+  background-image:  
+  /* ground */ linear-gradient(
     0deg,
     rgb(65, 59, 44) 0 30%,
     transparent 0 100%
@@ -492,4 +493,71 @@ section:target {
   --frog-colour-900: hsl(270, 100%, 30%);
   --frog-colour-400: hsl(270, 100%, 40%);
   --frog-colour-100: hsl(270, 60%, 80%);
+}
+
+/* Background elements */
+.frog__bush {
+  position: absolute;
+  background: hsl(100, 55%, 20%);
+  display: grid;
+  place-items: center;
+}
+
+.frog__bush--main {
+  width: 15em;
+  height: 15em;
+  bottom: 30%;
+  border-radius: 50%;
+  transform: translateY(3em);
+}
+
+.frog__bush--main.frog--left {
+  left: -5em;
+}
+
+.frog__bush--main.frog--right {
+  right: -5em;
+}
+
+.frog__bush::before {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  background: hsl(100, 50%, 30%);
+  bottom: 0;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  z-index: 0;
+}
+
+.frog__bush::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  background: hsl(100, 40%, 40%);
+  bottom: 0;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  z-index: 2;
+}
+
+.frog__bush--small {
+  width: 10em;
+  height: 10em;
+  bottom: 30%;
+  border-radius: 50%;
+}
+
+.frog__bush--small.frog--left {
+  transform: translate(-5em, -2em) rotate(-35deg);
+}
+
+.frog__bush--small.frog--middle {
+  transform: translate(0em, -5em) rotate(0);
+}
+
+.frog__bush--small.frog--right {
+  transform: translate(5em, 1em) rotate(35deg);
 }
