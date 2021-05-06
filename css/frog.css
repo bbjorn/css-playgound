@@ -1,12 +1,18 @@
 /* Frog */
 .frog {
   background-color: cornflowerblue;
-  background-image:  
+  background-image: 
     /* ground */ linear-gradient(
-    0deg,
-    rgb(65, 59, 44) 0 30%,
-    transparent 0 100%
-  );
+      0deg,
+      transparent 0 30%,
+      cornflowerblue 0 100%
+    ),
+    radial-gradient(
+      120vw 55vh at bottom center,
+      hsl(202, 100%, 37%) 0 50%,
+      hsl(46, 21%, 57%) 51% 55%,
+      hsl(115, 48%, 26%) 0% 100%
+    );
 }
 
 .frog__shadow {
@@ -17,7 +23,7 @@
   bottom: -5em;
   border-radius: 50%;
   transform: rotateX(80deg);
-  animation: frog-shadow 10000ms ease-out infinite alternate;
+  animation: frog-shadow 10000ms ease-out infinite alternate 1500ms;
 }
 
 @keyframes frog-shadow {
@@ -31,7 +37,7 @@
   --frog-colour-100: hsl(125, 60%, 80%);
   position: absolute;
   bottom: 0;
-  animation: frog-jump 10000ms ease-out infinite alternate;
+  animation: frog-jump 10000ms ease-out infinite alternate 1500ms;
 }
 
 .frog__leg {
@@ -42,7 +48,8 @@
   position: absolute;
   bottom: 0em;
   transform-origin: bottom;
-  animation: frog-knee 5000ms ease-in-out infinite alternate 1500ms;
+  animation: frog-knee 10000ms ease-in-out infinite alternate;
+  --frog-knee-tilt: rotate(-15deg);
 }
 
 .frog__leg.frog--left {
@@ -52,7 +59,7 @@
     var(--frog-colour-400) 0 100%
   );
   left: 0;
-  transform: rotate(-15deg);
+  transform: var(--frog-knee-tilt);
 }
 
 .frog__leg.frog--right {
@@ -62,19 +69,20 @@
     var(--frog-colour-400) 0 100%
   );
   right: 0;
-  transform: rotate(15deg);
+  --frog-knee-tilt: rotate(15deg);
+  transform: var(--frog-knee-tilt);
 }
 
 .frog__toes {
   position: absolute;
   background: var(--frog-colour-900);
-
   --toe-gradient: radial-gradient(
     at 50% 40%,
     var(--frog-colour-400) 0% 35%,
     var(--frog-colour-900) 0 100%
   );
   background-image: var(--toe-gradient);
+
   width: 1em;
   height: 1em;
   bottom: 0em;
@@ -113,13 +121,16 @@
 }
 
 @keyframes frog-knee {
+  90% {
+    transform: var(--frog-knee-tilt);
+  }
   100% {
     transform: rotate(0deg);
   }
 }
 
 @keyframes frog-jump {
-  50% {
+  90% {
     transform: translateY(0);
   }
   100% {
@@ -128,7 +139,7 @@
 }
 
 @keyframes frog-shadow {
-  50% {
+  90% {
     transform: rotateX(80deg) scale(1);
   }
   100% {
@@ -480,4 +491,64 @@
   100% {
     transform: translate(calc(100vw + 30em), 2.5vh);
   }
+}
+
+/* Lily Pads */
+
+.frog__lilypad {
+  background: conic-gradient(
+    hsl(100, 50%, 25%) 0% 30%,
+    transparent 0% 40%,
+    hsl(100, 50%, 25%) 0% 100%
+  );
+  width: 20em;
+  height: 20em;
+  position: absolute;
+  bottom: -10em;
+  border-radius: 50%;
+  --lily-border: hsl(100, 50%, 20%);
+  filter: drop-shadow(0.5em 1em 0 var(--lily-border))
+    drop-shadow(0.5em -1em 0 var(--lily-border))
+    drop-shadow(-0.5em 1em 0 var(--lily-border))
+    drop-shadow(-0.5em -1em 0 var(--lily-border));
+  transform: rotateX(80deg);
+}
+
+.frog__lilypad::before,
+.frog__lilypad::after {
+  content: "";
+
+  position: absolute;
+
+  border-radius: 50%;
+  --lily-border: hsl(100, 50%, 20%);
+  filter: drop-shadow(0.125em 0.25em 0 var(--lily-border))
+    drop-shadow(0.125em -0.25em 0 var(--lily-border))
+    drop-shadow(-0.125em 0.25em 0 var(--lily-border))
+    drop-shadow(-0.125em -0.25em 0 var(--lily-border));
+}
+
+.frog__lilypad::before {
+  width: 10em;
+  height: 10em;
+  bottom: -20em;
+  left: -10em;
+
+  background: conic-gradient(
+    hsl(100, 50%, 25%) 0% 15%,
+    transparent 0% 35%,
+    hsl(100, 50%, 25%) 0% 100%
+  );
+}
+.frog__lilypad::after {
+  width: 12em;
+  height: 12em;
+  bottom: -20em;
+  right: -10em;
+
+  background: conic-gradient(
+    hsl(100, 50%, 25%) 0% 65%,
+    transparent 0% 80%,
+    hsl(100, 50%, 25%) 0% 100%
+  );
 }
