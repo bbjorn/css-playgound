@@ -38,6 +38,7 @@
 /* The actual card */
 .card {
   flex: 0 0 auto;
+  background-color: darkgrey;
   background-image: url(https://source.unsplash.com/400x400/?flag);
   background-size: cover;
   width: 16em;
