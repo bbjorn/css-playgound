@@ -4,8 +4,8 @@
 }
 
 .snake__body {
-  --snake-clr: hsl(128, 38%, 59%);
-  --snake-glow-clr: hsl(128, 52%, 78%);
+  --snake-clr: hsl(0, 38%, 59%);
+  --snake-glow-clr: hsl(0, 52%, 78%);
   position: absolute;
   top: calc(50%-10rem);
   left: 50%;
@@ -25,9 +25,9 @@
   left: -0.5em;
   width: 1em;
   height: 1em;
-  background: var(--snake-glow-clr);
   box-sizing: content-box;
   transform: translateY(-5rem);
+  background: var(--snake-glow-clr);
   box-shadow: 0 0 1em var(--snake-glow-clr), 0 0 0.5em var(--snake-clr);
 }
 
@@ -43,15 +43,6 @@
 }
 
 /* Keyframes */
-
-@keyframes snake-glow {
-  from {
-    transform: translateY(-5rem) scale(0.5);
-  }
-  to {
-    transform: translateY(-5rem) scale(1);
-  }
-}
 
 @keyframes snake-move {
   0% {
@@ -83,13 +74,13 @@
 }
 
 /* Snake parts */
-
 .snake__body0::after {
-  animation: snake-glow 500ms infinite alternate linear;
+  animation: snake-colours-after 10s infinite linear 0s;
+}
+.snake__body0::before {
+  animation: snake-colours-before 10s infinite linear 0s;
 }
 .snake__body0 {
-  --snake-clr: hsl(0, 38%, 59%);
-  --snake-glow-clr: hsl(0, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 0s;
 }
 .snake__referense0 {
@@ -97,11 +88,12 @@
 }
 
 .snake__body1::after {
-  animation: snake-glow 500ms infinite alternate linear;
+  animation: snake-colours-after 10s infinite linear 1s;
+}
+.snake__body1::before {
+  animation: snake-colours-before 10s infinite linear 1s;
 }
 .snake__body1 {
-  --snake-clr: hsl(36, 38%, 59%);
-  --snake-glow-clr: hsl(36, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 1s;
 }
 .snake__referense1 {
@@ -109,11 +101,12 @@
 }
 
 .snake__body2::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 2s;
+}
+.snake__body2::before {
+  animation: snake-colours-before 10s infinite linear 2s;
 }
 .snake__body2 {
-  --snake-clr: hsl(72, 38%, 59%);
-  --snake-glow-clr: hsl(72, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 2s;
 }
 .snake__referense2 {
@@ -121,11 +114,12 @@
 }
 
 .snake__body3::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 3s;
+}
+.snake__body3::before {
+  animation: snake-colours-before 10s infinite linear 3s;
 }
 .snake__body3 {
-  --snake-clr: hsl(108, 38%, 59%);
-  --snake-glow-clr: hsl(108, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 3s;
 }
 .snake__referense3 {
@@ -133,11 +127,13 @@
 }
 
 .snake__body4::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 4s;
 }
+.snake__body4::before {
+  animation: snake-colours-before 10s infinite linear 4s;
+}
+
 .snake__body4 {
-  --snake-clr: hsl(144, 38%, 59%);
-  --snake-glow-clr: hsl(144, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 4s;
 }
 .snake__referense4 {
@@ -145,11 +141,12 @@
 }
 
 .snake__body5::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 5s;
+}
+.snake__body5::before {
+  animation: snake-colours-before 10s infinite linear 5s;
 }
 .snake__body5 {
-  --snake-clr: hsl(180, 38%, 59%);
-  --snake-glow-clr: hsl(180, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 5s;
 }
 .snake__referense5 {
@@ -157,11 +154,12 @@
 }
 
 .snake__body6::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 6s;
+}
+.snake__body6::before {
+  animation: snake-colours-before 10s infinite linear 6s;
 }
 .snake__body6 {
-  --snake-clr: hsl(216, 38%, 59%);
-  --snake-glow-clr: hsl(216, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 6s;
 }
 .snake__referense6 {
@@ -169,11 +167,12 @@
 }
 
 .snake__body7::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 7s;
+}
+.snake__body7::before {
+  animation: snake-colours-before 10s infinite linear 7s;
 }
 .snake__body7 {
-  --snake-clr: hsl(252, 38%, 59%);
-  --snake-glow-clr: hsl(252, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 7s;
 }
 .snake__referense7 {
@@ -181,11 +180,13 @@
 }
 
 .snake__body8::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-glow 500ms infinite alternate linear;
+  animation: snake-colours-after 10s infinite linear 8s;
+}
+.snake__body8::before {
+  animation: snake-colours-before 10s infinite linear 8s;
 }
 .snake__body8 {
-  --snake-clr: hsl(288, 38%, 59%);
-  --snake-glow-clr: hsl(288, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 8s;
 }
 .snake__referense8 {
@@ -193,11 +194,12 @@
 }
 
 .snake__body9::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 9s;
+}
+.snake__body9::before {
+  animation: snake-colours-before 10s infinite linear 9s;
 }
 .snake__body9 {
-  --snake-clr: hsl(324, 38%, 59%);
-  --snake-glow-clr: hsl(324, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 9s;
 }
 .snake__referense9 {
@@ -205,11 +207,12 @@
 }
 
 .snake__body10::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 0.5s;
+}
+.snake__body10::before {
+  animation: snake-colours-before 10s infinite linear 0.5s;
 }
 .snake__body10 {
-  --snake-clr: hsl(18, 38%, 59%);
-  --snake-glow-clr: hsl(18, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 0.5s;
 }
 .snake__referense10 {
@@ -217,11 +220,12 @@
 }
 
 .snake__body11::after {
-  animation: snake-glow 500ms infinite linear alternate;
+  animation: snake-colours-after 10s infinite linear 1.5s;
+}
+.snake__body11::before {
+  animation: snake-colours-before 10s infinite linear 1.5s;
 }
 .snake__body11 {
-  --snake-clr: hsl(54, 38%, 59%);
-  --snake-glow-clr: hsl(54, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 1.5s;
 }
 .snake__referense11 {
@@ -229,11 +233,12 @@
 }
 
 .snake__body12::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 2.5s;
+}
+.snake__body12::before {
+  animation: snake-colours-before 10s infinite linear 2.5s;
 }
 .snake__body12 {
-  --snake-clr: hsl(90, 38%, 59%);
-  --snake-glow-clr: hsl(90, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 2.5s;
 }
 .snake__referense12 {
@@ -241,11 +246,12 @@
 }
 
 .snake__body13::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 3.5s;
+}
+.snake__body13::before {
+  animation: snake-colours-before 10s infinite linear 3.5s;
 }
 .snake__body13 {
-  --snake-clr: hsl(126, 38%, 59%);
-  --snake-glow-clr: hsl(126, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 3.5s;
 }
 .snake__referense13 {
@@ -253,11 +259,12 @@
 }
 
 .snake__body14::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 4.5s;
+}
+.snake__body14::before {
+  animation: snake-colours-before 10s infinite linear 4.5s;
 }
 .snake__body14 {
-  --snake-clr: hsl(162, 38%, 59%);
-  --snake-glow-clr: hsl(162, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 4.5s;
 }
 .snake__referense14 {
@@ -265,11 +272,12 @@
 }
 
 .snake__body15::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 5.5s;
+}
+.snake__body15::before {
+  animation: snake-colours-before 10s infinite linear 5.5s;
 }
 .snake__body15 {
-  --snake-clr: hsl(198, 38%, 59%);
-  --snake-glow-clr: hsl(198, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 5.5s;
 }
 .snake__referense15 {
@@ -277,11 +285,12 @@
 }
 
 .snake__body16::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 6.5s;
+}
+.snake__body16::before {
+  animation: snake-colours-before 10s infinite linear 6.5s;
 }
 .snake__body16 {
-  --snake-clr: hsl(234, 38%, 59%);
-  --snake-glow-clr: hsl(234, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 6.5s;
 }
 .snake__referense16 {
@@ -289,11 +298,12 @@
 }
 
 .snake__body17::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 7.5s;
+}
+.snake__body17::before {
+  animation: snake-colours-before 10s infinite linear 7.5s;
 }
 .snake__body17 {
-  --snake-clr: hsl(270, 38%, 59%);
-  --snake-glow-clr: hsl(270, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 7.5s;
 }
 .snake__referense17 {
@@ -301,11 +311,12 @@
 }
 
 .snake__body18::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 8.5s;
+}
+.snake__body18::before {
+  animation: snake-colours-before 10s infinite linear 8.5s;
 }
 .snake__body18 {
-  --snake-clr: hsl(306, 38%, 59%);
-  --snake-glow-clr: hsl(306, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 8.5s;
 }
 .snake__referense18 {
@@ -313,13 +324,203 @@
 }
 
 .snake__body19::after {
-  animation: snake-glow 500ms infinite alternate linear 150ms;
+  animation: snake-colours-after 10s infinite linear 9.5s;
+}
+.snake__body19::before {
+  animation: snake-colours-before 10s infinite linear 9.5s;
 }
 .snake__body19 {
-  --snake-clr: hsl(342, 38%, 59%);
-  --snake-glow-clr: hsl(342, 52%, 78%);
   animation: snake-rotate 5s alternate infinite linear 9.5s;
 }
 .snake__referense19 {
   animation: snake-move 10s infinite linear 9.5s;
+}
+
+@keyframes snake-colours-before {
+  0% {
+    background: hsl(0, 52%, 78%);
+    box-shadow: 0 0 1em hsl(0, 52%, 78%), 0 0 0.5em hsl(0, 38%, 59%);
+  }
+  5% {
+    background: hsl(18, 52%, 78%);
+    box-shadow: 0 0 1em hsl(18, 52%, 78%), 0 0 0.5em hsl(18, 38%, 59%);
+  }
+  10% {
+    background: hsl(36, 52%, 78%);
+    box-shadow: 0 0 1em hsl(36, 52%, 78%), 0 0 0.5em hsl(36, 38%, 59%);
+  }
+  15% {
+    background: hsl(54, 52%, 78%);
+    box-shadow: 0 0 1em hsl(54, 52%, 78%), 0 0 0.5em hsl(54, 38%, 59%);
+  }
+  20% {
+    background: hsl(72, 52%, 78%);
+    box-shadow: 0 0 1em hsl(72, 52%, 78%), 0 0 0.5em hsl(72, 38%, 59%);
+  }
+  25% {
+    background: hsl(90, 52%, 78%);
+    box-shadow: 0 0 1em hsl(90, 52%, 78%), 0 0 0.5em hsl(90, 38%, 59%);
+  }
+  30% {
+    background: hsl(108, 52%, 78%);
+    box-shadow: 0 0 1em hsl(108, 52%, 78%), 0 0 0.5em hsl(108, 38%, 59%);
+  }
+  35% {
+    box-shadow: 0 0 1em hsl(126, 52%, 78%), 0 0 0.5em hsl(126, 38%, 59%);
+    background: hsl(126, 52%, 78%);
+  }
+  40% {
+    background: hsl(144, 52%, 78%);
+    box-shadow: 0 0 1em hsl(144, 52%, 78%), 0 0 0.5em hsl(144, 38%, 59%);
+  }
+  45% {
+    background: hsl(162, 52%, 78%);
+    box-shadow: 0 0 1em hsl(162, 52%, 78%), 0 0 0.5em hsl(162, 38%, 59%);
+  }
+  50% {
+    background: hsl(180, 52%, 78%);
+    box-shadow: 0 0 1em hsl(180, 52%, 78%), 0 0 0.5em hsl(180, 38%, 59%);
+  }
+  55% {
+    background: hsl(198, 52%, 78%);
+    box-shadow: 0 0 1em hsl(198, 52%, 78%), 0 0 0.5em hsl(198, 38%, 59%);
+  }
+  60% {
+    background: hsl(216, 52%, 78%);
+    box-shadow: 0 0 1em hsl(216, 52%, 78%), 0 0 0.5em hsl(216, 38%, 59%);
+  }
+  65% {
+    background: hsl(234, 52%, 78%);
+    box-shadow: 0 0 1em hsl(234, 52%, 78%), 0 0 0.5em hsl(234, 38%, 59%);
+  }
+  70% {
+    background: hsl(252, 52%, 78%);
+    box-shadow: 0 0 1em hsl(252, 52%, 78%), 0 0 0.5em hsl(252, 38%, 59%);
+  }
+  75% {
+    background: hsl(270, 52%, 78%);
+    box-shadow: 0 0 1em hsl(270, 52%, 78%), 0 0 0.5em hsl(270, 38%, 59%);
+  }
+  80% {
+    background: hsl(288, 52%, 78%);
+    box-shadow: 0 0 1em hsl(288, 52%, 78%), 0 0 0.5em hsl(288, 38%, 59%);
+  }
+  85% {
+    background: hsl(306, 52%, 78%);
+    box-shadow: 0 0 1em hsl(306, 52%, 78%), 0 0 0.5em hsl(306, 38%, 59%);
+  }
+  90% {
+    background: hsl(324, 52%, 78%);
+    box-shadow: 0 0 1em hsl(324, 52%, 78%), 0 0 0.5em hsl(324, 38%, 59%);
+  }
+  95% {
+    background: hsl(342, 52%, 78%);
+    box-shadow: 0 0 1em hsl(342, 52%, 78%), 0 0 0.5em hsl(342, 38%, 59%);
+  }
+  100% {
+    background: hsl(360, 52%, 78%);
+    box-shadow: 0 0 1em hsl(360, 52%, 78%), 0 0 0.5em hsl(360, 38%, 59%);
+  }
+}
+
+@keyframes snake-colours-after {
+  0% {
+    box-shadow: 0 0 2em 0.5em hsl(0, 52%, 78%), 0 0 1em 0.5em hsl(0, 38%, 59%);
+    transform: translateY(-5rem) scale(1);
+  }
+  5% {
+    box-shadow: 0 0 2em 0.5em hsl(18, 52%, 78%), 0 0 1em 0.5em hsl(18, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  10% {
+    box-shadow: 0 0 2em 0.5em hsl(36, 52%, 78%), 0 0 1em 0.5em hsl(36, 38%, 59%);
+    transform: translateY(-5rem) scale(1);
+  }
+  15% {
+    box-shadow: 0 0 2em 0.5em hsl(54, 52%, 78%), 0 0 1em 0.5em hsl(54, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  20% {
+    box-shadow: 0 0 2em 0.5em hsl(72, 52%, 78%), 0 0 1em 0.5em hsl(72, 38%, 59%);
+    transform: translateY(-5rem) scale(1);
+  }
+  25% {
+    box-shadow: 0 0 2em 0.5em hsl(90, 52%, 78%), 0 0 1em 0.5em hsl(90, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  30% {
+    box-shadow: 0 0 2em 0.5em hsl(108, 52%, 78%),
+      0 0 1em 0.5em hsl(108, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  35% {
+    box-shadow: 0 0 2em 0.5em hsl(126, 52%, 78%),
+      0 0 1em 0.5em hsl(126, 38%, 59%);
+    transform: translateY(-5rem) scale(1);
+  }
+  40% {
+    box-shadow: 0 0 2em 0.5em hsl(144, 52%, 78%),
+      0 0 1em 0.5em hsl(144, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  45% {
+    box-shadow: 0 0 2em 0.5em hsl(162, 52%, 78%),
+      0 0 1em 0.5em hsl(162, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  50% {
+    box-shadow: 0 0 2em 0.5em hsl(180, 52%, 78%),
+      0 0 1em 0.5em hsl(180, 38%, 59%);
+    transform: translateY(-5rem) scale(1);
+  }
+  55% {
+    box-shadow: 0 0 2em 0.5em hsl(198, 52%, 78%),
+      0 0 1em 0.5em hsl(198, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  60% {
+    box-shadow: 0 0 2em 0.5em hsl(216, 52%, 78%),
+      0 0 1em 0.5em hsl(216, 38%, 59%);
+    transform: translateY(-5rem) scale(1);
+  }
+  65% {
+    box-shadow: 0 0 2em 0.5em hsl(234, 52%, 78%),
+      0 0 1em 0.5em hsl(234, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  70% {
+    box-shadow: 0 0 2em 0.5em hsl(252, 52%, 78%),
+      0 0 1em 0.5em hsl(252, 38%, 59%);
+    transform: translateY(-5rem) scale(1);
+  }
+  75% {
+    box-shadow: 0 0 2em 0.5em hsl(270, 52%, 78%),
+      0 0 1em 0.5em hsl(270, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  80% {
+    box-shadow: 0 0 2em 0.5em hsl(288, 52%, 78%),
+      0 0 1em 0.5em hsl(288, 38%, 59%);
+    transform: translateY(-5rem) scale(1);
+  }
+  85% {
+    box-shadow: 0 0 2em 0.5em hsl(306, 52%, 78%),
+      0 0 1em 0.5em hsl(306, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  90% {
+    box-shadow: 0 0 2em 0.5em hsl(324, 52%, 78%),
+      0 0 1em 0.5em hsl(324, 38%, 59%);
+    transform: translateY(-5rem) scale(1);
+  }
+  95% {
+    box-shadow: 0 0 2em 0.5em hsl(342, 52%, 78%),
+      0 0 1em 0.5em hsl(342, 38%, 59%);
+    transform: translateY(-5rem) scale(0.5);
+  }
+  100% {
+    box-shadow: 0 0 2em 0.5em hsl(360, 52%, 78%),
+      0 0 1em 0.5em hsl(360, 38%, 59%);
+    transform: translateY(-5rem) scale(1);
+  }
 }
