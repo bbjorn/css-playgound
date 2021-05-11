@@ -227,7 +227,7 @@
 .frog__eye::before,
 .frog__eye::after {
   transform: scaleY(1);
-  animation: frog-blink 9000ms linear infinite;
+  animation: frog-blink 7000ms linear infinite;
 }
 
 @keyframes frog-blink {
@@ -287,6 +287,7 @@
 /* Selectors */
 
 .frog__canvas {
+  z-index: 10;
   position: absolute;
   top: 10em;
   display: flex;
