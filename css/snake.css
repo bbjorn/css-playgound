@@ -73,6 +73,10 @@
   font-size: 1.5rem;
 }
 
+/* The code below this point shows one of the big limitations of working with CSS only
+   In a production project I would either have used some CSS complier like SCSS or 
+   perhaps used JavaScript to reduce the amount of code below. */
+
 /* Snake parts */
 .snake__body0::after {
   animation: snake-colours-after 10s infinite linear 0s;
