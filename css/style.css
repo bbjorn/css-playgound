@@ -82,7 +82,7 @@ section:target {
   background-color: white;
   border-radius: 9999px;
   width: 50%;
-  height: 0.3em;
+  height: 0.3rem;
 }
 
 .navbtn:focus,
