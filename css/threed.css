@@ -10,7 +10,7 @@
   perspective-origin: 50% calc(50% - 2em);
   font-size: 50px;
 
-  --rotation-speed: 30s;
+  --rotation-speed: 45s;
 }
 
 .threed__scene {
@@ -21,7 +21,7 @@
 
 @keyframes rotate-scene {
   100% {
-    transform: rotateY(360deg);
+    transform: rotateY(-360deg);
   }
 }
 
@@ -38,6 +38,33 @@
   height: var(--cube-height);
   bottom: -1em;
   left: -1em;
+
+  animation: cube-bounce 10s linear infinite;
+}
+
+@keyframes cube-bounce {
+  19% {
+    height: 2em;
+    animation-timing-function: ease-in;
+  }
+  20% {
+    height: 1.75em;
+    animation-timing-function: ease-out;
+  }
+  22% {
+    height: 2.25em;
+  }
+  23%,
+  25%,
+  27% {
+    height: 2em;
+  }
+  24% {
+    height: 2.125em;
+  }
+  26% {
+    height: 2.0625em;
+  }
 }
 
 .dddcube__side {
@@ -81,6 +108,7 @@
   transform: translateY(calc(50% - 1px)) rotateX(-90deg);
   box-shadow: 0 0 0.5em #000;
   background-color: #0007;
+  bottom: 1px;
 }
 
 .dddfloor {
@@ -133,7 +161,8 @@
 
 @keyframes drop-ball {
   20% {
-    bottom: 2em;
+    /* Ball collides with cube */
+    bottom: 1.8em;
     animation-timing-function: ease-out;
   }
   26.75% {
