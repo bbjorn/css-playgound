@@ -17,8 +17,12 @@
 
 .dropgrid__filled {
   max-height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0 0 5em 5vmax black;
+  background-image: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 0.25),
+    black 75%
+  );
+  box-shadow: inset 0 0 5vmin 5vmin black;
 }
 
 .dropgrid__child {
