@@ -113,9 +113,9 @@
 
 .dddfloor {
   position: absolute;
-  height: 20em;
-  width: 20em;
-  background-image: radial-gradient(transparent, black 60%),
+  height: 17em;
+  width: 17em;
+  background-image: radial-gradient(transparent, black 65%),
     repeating-conic-gradient(
       from 45deg,
       rgb(66, 43, 43) 0deg 45deg,
@@ -183,9 +183,11 @@
     animation-timing-function: ease-out;
     bottom: 0em;
   }
+  67% {
+    background-color: black;
+  }
   70% {
     animation-timing-function: ease-in;
-    background-color: black;
     bottom: 1em;
   }
   80% {
