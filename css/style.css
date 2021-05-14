@@ -42,20 +42,23 @@ section {
 
 section:target {
   display: grid;
+  visibility: visible;
 }
 
-section:target ~ section:last-child {
+/* section:target ~ section:last-child {
   display: grid;
-}
+  visibility: visible;
+} */
 
 section,
 section:target ~ #0 {
   display: none;
+  visibility: hidden;
 }
 
-#0,
-section:target {
+#0 {
   display: grid;
+  visibility: visible;
 }
 
 .title {
