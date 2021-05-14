@@ -113,9 +113,9 @@
 
 .dddfloor {
   position: absolute;
-  height: 15em;
-  width: 15em;
-  background-image: radial-gradient(transparent, black 75%),
+  height: 20em;
+  width: 20em;
+  background-image: radial-gradient(transparent, black 60%),
     repeating-conic-gradient(
       from 45deg,
       rgb(66, 43, 43) 0deg 45deg,
