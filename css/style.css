@@ -34,8 +34,8 @@ section {
   position: relative;
   place-items: center;
   gap: 10em;
-  width: 0;
-  height: 0;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
   z-index: 0;
 }
@@ -43,8 +43,6 @@ section {
 section:target {
   display: grid;
   visibility: visible;
-  width: 100%;
-  height: 100vh;
 }
 
 /* section:target ~ section:last-child {
@@ -56,6 +54,8 @@ section,
 section:target ~ #0 {
   display: none;
   visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 #0 {
