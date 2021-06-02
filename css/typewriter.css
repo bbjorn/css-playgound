@@ -16,7 +16,7 @@
 .typewriter__title {
   position: static;
   text-align: center;
-  margin-bottom: 25vh;
+  margin-bottom: 15vh;
 }
 
 .typewriter__wrapper {
@@ -34,6 +34,7 @@
   position: relative;
   font-family: monospace;
   overflow: hidden;
+  margin-bottom: 3em;
 }
 
 .typewriter__text::before,
@@ -94,5 +95,136 @@
   /* 3840x2160 */
   .typewriter {
     background-image: url(https://source.unsplash.com/3840x2160/?typewriter);
+  }
+}
+
+.clock {
+  --clr-clock-bg: rgb(0, 0, 0);
+  --clr-clock-face: rgb(255, 255, 255);
+  position: absolute;
+  height: 10em;
+  width: 10em;
+  background-color: var(--clr-clock-bg);
+  color: var(--clr-clock-face);
+  border: 0.2em var(--clr-clock-face) solid;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  right: -2.5em;
+  bottom: -6em;
+}
+
+.clock::before {
+  content: "";
+  display: block;
+  height: 1em;
+  width: 1em;
+
+  position: absolute;
+  z-index: 100;
+}
+
+.clock__num {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+}
+
+.clock__12 {
+  transform: rotate(0deg);
+}
+
+.clock__3 {
+  transform: rotate(90deg);
+}
+
+.clock__6 {
+  transform: rotate(180deg);
+}
+
+.clock__9 {
+  transform: rotate(-90deg);
+}
+
+.clock__num::after,
+.clock__num::before {
+  position: absolute;
+  display: block;
+  width: 0.125em;
+  height: 0.5em;
+  left: 50%;
+  background-color: var(--clr-clock-face);
+  content: "";
+}
+
+.clock__num::before {
+  right: 0;
+  top: 0;
+  transform: rotate(-30deg) translateY(-4em);
+}
+
+.clock__num::after {
+  right: 0;
+  top: 0;
+  transform: rotate(30deg) translateY(-4em);
+}
+
+.clock__num span {
+  position: absolute;
+  left: calc(50% - 0.5ch);
+  display: block;
+}
+
+.clock__12 span {
+  left: calc(50% - 1ch);
+  transform: translateY(-4.2em) rotate(0deg);
+}
+
+.clock__3 span {
+  transform: translateY(-4.2em) rotate(-90deg);
+}
+
+.clock__6 span {
+  transform: translateY(-4.2em) rotate(-180deg);
+}
+
+.clock__9 span {
+  transform: translateY(-4.2em) rotate(90deg);
+}
+
+.clock__arms {
+  position: relative;
+
+  border-radius: 50%;
+  background-color: var(--clr-clock-face);
+  transform: rotate(180deg);
+}
+
+.clock__arms::before,
+.clock__arms::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: var(--clr-clock-face);
+}
+
+.clock__arms::before {
+  left: calc(50% - 0.125em);
+  width: 0.25em;
+  height: 2.25em;
+  transform-origin: 50% 0;
+  animation: clock 720s steps(720, end) infinite;
+}
+.clock__arms::after {
+  left: calc(50% - 0.0625em);
+  width: 0.125em;
+  height: 3.5em;
+  transform-origin: 50% 0;
+  animation: clock 60s steps(60, end) infinite;
+}
+
+@keyframes clock {
+  to {
+    transform: rotate(360deg);
   }
 }
