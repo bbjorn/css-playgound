@@ -1,0 +1,98 @@
+:root {
+  --typewriter-length: 18;
+  --typerwriter-indicator-speed: 800ms;
+  --typerwriter-type-speed: 10000ms;
+  --typewriter-delay: 0ms;
+}
+
+.typewriter {
+  --clr-type-bg: black;
+  background-color: black;
+  background-image: url(https://source.unsplash.com/800x800/?typewriter);
+  background-position: center;
+  background-size: cover;
+}
+
+.typewriter__title {
+  position: static;
+  text-align: center;
+  margin-bottom: 25vh;
+}
+
+.typewriter__wrapper {
+  position: relative;
+  background-color: var(--clr-type-bg);
+  padding: max(1em, 5vh) max(1em, 10vw);
+  border: white solid 0.4rem;
+  /* outline: var(--clr-type-bg) solid 0.2rem; */
+  min-width: 50%;
+}
+
+.typewriter__text {
+  font-size: 1.5em;
+  color: white;
+  position: relative;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+.typewriter__text::before,
+.typewriter__text::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: calc(var(--typewriter-length) * 1ch);
+  top: 0;
+  left: 0;
+
+  animation: typewriter-type var(--typerwriter-type-speed)
+    steps(var(--typewriter-length), end) infinite alternate
+    var(--typewriter-delay);
+}
+
+.typewriter__text::before {
+  left: 0;
+  border-left: 2px solid white;
+  z-index: 10;
+  animation: typewriter-indicator linear infinite
+      var(--typerwriter-indicator-speed),
+    typewriter-type var(--typerwriter-type-speed)
+      steps(var(--typewriter-length), end) infinite alternate
+      var(--typewriter-delay);
+}
+
+.typewriter__text::after {
+  background-color: var(--clr-type-bg);
+}
+
+@keyframes typewriter-indicator {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes typewriter-type {
+  0%,
+  25% {
+    transform: translateX(0);
+  }
+  75%,
+  100% {
+    transform: translateX(calc(var(--typewriter-length) * 1ch));
+  }
+}
+
+@media screen and (min-width: 800px) {
+  /* 1920x1200 */
+  .typewriter {
+    background-image: url(https://source.unsplash.com/1920x1200/?typewriter);
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  /* 3840x2160 */
+  .typewriter {
+    background-image: url(https://source.unsplash.com/3840x2160/?typewriter);
+  }
+}
