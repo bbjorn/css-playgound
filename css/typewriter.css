@@ -1,8 +1,8 @@
 :root {
-  --typewriter-length: 18;
-  --typerwriter-indicator-speed: 800ms;
-  --typerwriter-type-speed: 10000ms;
-  --typewriter-delay: 0ms;
+  --typewriter-length: 18; /* This has to be the same length a number of characters (including spaces) in the world */
+  --typerwriter-indicator-speed: 800ms; /* How quickly the bar blinks */
+  --typerwriter-type-speed: 10000ms; /* The total speed of the animation */
+  --typewriter-delay: 0ms; /* Delay before the first time the animation is run */
 }
 
 .typewriter {
@@ -47,6 +47,7 @@
   top: 0;
   left: 0;
 
+  /* the steps-function creates the effect of moving the animation is descrete steps */
   animation: typewriter-type var(--typerwriter-type-speed)
     steps(var(--typewriter-length), end) infinite alternate
     var(--typewriter-delay);
@@ -74,6 +75,7 @@
 }
 
 @keyframes typewriter-type {
+  /* The animation is only running between 25% and 75%, the rest of the time it is paused. This does not affect the amounts of steps*/
   0%,
   25% {
     transform: translateX(0);
@@ -84,6 +86,7 @@
   }
 }
 
+/* Scaling the background image on larger screens */
 @media screen and (min-width: 800px) {
   /* 1920x1200 */
   .typewriter {
@@ -98,6 +101,7 @@
   }
 }
 
+/* Clock */
 .clock {
   --clr-clock-bg: rgb(0, 0, 0);
   --clr-clock-face: rgb(255, 255, 255);
@@ -110,20 +114,12 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  right: -2.5em;
-  bottom: -6em;
+  right: -4.5em;
+  bottom: -4.5em;
+  font-size: 0.8rem;
 }
 
-.clock::before {
-  content: "";
-  display: block;
-  height: 1em;
-  width: 1em;
-
-  position: absolute;
-  z-index: 100;
-}
-
+/* Face of the clock */
 .clock__num {
   position: absolute;
   width: 1em;
@@ -192,11 +188,11 @@
   transform: translateY(-4.2em) rotate(90deg);
 }
 
+/* Arms of the clock */
+
 .clock__arms {
   position: relative;
-
-  border-radius: 50%;
-  background-color: var(--clr-clock-face);
+  /* This was easier than chaning the starting position of the arms */
   transform: rotate(180deg);
 }
 
@@ -208,13 +204,17 @@
   background-color: var(--clr-clock-face);
 }
 
+/* Hour arm - sped up so that one hour takes 60 seconds */
 .clock__arms::before {
   left: calc(50% - 0.125em);
   width: 0.25em;
   height: 2.25em;
+  /* transform-origin is used to make sure that the arms are rotated around middle of the top*/
   transform-origin: 50% 0;
   animation: clock 720s steps(720, end) infinite;
 }
+
+/* Minute arm - sped up so that one minute takes one second */
 .clock__arms::after {
   left: calc(50% - 0.0625em);
   width: 0.125em;
