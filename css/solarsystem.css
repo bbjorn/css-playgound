@@ -1,0 +1,218 @@
+.solarsystem{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+    background-color: #012;
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png);
+    background-repeat: repeat; 
+  }
+  
+  .solarsystem__twinking{
+    --bg-color: #012E;
+    position: absolute; 
+    inset: 0; 
+    background: radial-gradient(circle, var(--bg-color) 0.75em, transparent 1.25em), 
+                radial-gradient(circle at 2em 2em, var(--bg-color) 0.5em, transparent 1em), 
+                radial-gradient(circle at 4em 2em, var(--bg-color) 0.25em, transparent 0.75em),
+                radial-gradient(circle at 1em 4em, var(--bg-color) 0.25em, transparent 0.75em),
+                radial-gradient(circle at 3.5em 3.5em, var(--bg-color) 0.5em, transparent 1em); 
+    background-size: 5em 5em; 
+    background-position: 0%; 
+    animation: twinking 120s linear infinite;
+  }
+  
+  @keyframes twinking{
+    0%{
+        background-position: 0% 0%; 
+    }
+    50%{
+      background-position: 50% -100%; 
+    }
+    100%{
+      background-position: 100% 100%; 
+    }
+  }
+  .solarsystem__wrapper{
+    position: absolute; 
+    inset: 0; 
+    display: grid; 
+    place-items: center; 
+    background: radial-gradient(circle, #FFF2, transparent 75%);
+    perspective: 800px;
+    perspective-origin: 50% 55%;
+  }
+  
+  .solarsystem__sphere{
+    aspect-ratio: 1; 
+    border-radius: 50%; 
+    transform-style: preserve-3d;
+    position: absolute;
+  }
+  
+  .solarsystem__sun{
+    height: 5em;
+    background-color: #ffdf00;
+    background-image: radial-gradient(circle at top, #FFFA, #F835);
+    z-index: 0;
+  }
+  
+  .solarsystem__planet{
+    transform: rotateY(0deg) translateX(10em) rotateY(-0deg);
+    
+    height: 2em;
+  }
+  
+  .solarsystem__planet--a{
+    font-size: 0.75em;
+    animation: solarYear 8s linear infinite, solarYearZ1 8s linear infinite;  
+  }
+  
+  .solarsystem__planet--b{
+    font-size: 1em;
+    animation: solarYear 10s linear infinite, solarYearZ2 10s linear infinite;  
+  }
+  
+  .solarsystem__planet--c{
+    font-size: 1.5em;
+    animation: solarYear 12s linear infinite, solarYearZ3 12s linear infinite;  
+  }
+  
+  .solarsystem__planet--d{
+    height: 2.5em; 
+    font-size: 2.125em;
+    animation: solarYear 16s linear infinite, solarYearZ4 16s linear infinite;  
+  }
+  
+  .solarsystem__planet--e{
+    height: 1.5em; 
+    font-size: 2.9em;
+    animation: solarYear 18s linear infinite, solarYearZ5 18s linear infinite; 
+  }
+  
+  .solarsystem__planet--blue{
+     background-color: blue;
+    background-image: radial-gradient(circle at top, #FFF8, #8F3A);
+  }
+  
+  .solarsystem__planet--grey{
+    background-color: #555;
+    background-image: radial-gradient(circle at top, #FFF8, #333A);
+  }
+  
+  .solarsystem__planet--red{
+    background-color: #555;
+    background-image: radial-gradient(circle at top, #FFF8, #F83A);
+  }
+  
+  .solarsystem__planet--green{
+    background-color: green;
+    background-image: radial-gradient(circle at top, #FFF8, #573A);
+  }
+  
+  .solarsystem__planet--tan{
+    background-color: #B84;
+    background-image: radial-gradient(circle at top, #FFF8, #7653);
+  }
+  
+  
+  .solarsystem__planet--ring::after{
+    content: '';
+    position: absolute; 
+    left: -0.5em;
+    right: -0.5em;
+    height: 1em;
+    top: 50%; 
+    transform: translateY(-50%) rotate(5deg);
+    
+    border: 0.25em solid;
+    border-radius: 50%;
+    color: #444;
+    transform-origin: center; 
+  }
+  
+  .solarsystem__planet--ring::before{
+    content: '';
+    position: absolute; 
+    display: block; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%; 
+    background: inherit;
+    background-size: 100% 200%; 
+    border-top-left-radius: 9999em;
+    border-top-right-radius: 9999em;
+  }
+  
+  
+  @keyframes solarYear {
+    0%{
+      transform: rotateY(0deg) translateX(20em) rotateY(-0deg);
+    }
+    100%{
+      transform: rotateY(360deg) translateX(20em) rotateY(-360deg);
+    }
+  }
+  
+  @keyframes solarYearZ1{
+    0%{
+      z-index: -1;
+    }
+    49%{
+      z-index: -1;
+    }
+    50%{
+      z-index: 1; 
+    }
+  }
+  
+  @keyframes solarYearZ2{
+    0%{
+      z-index: -2;
+    }
+    49%{
+      z-index: -2;
+    }
+    50%{
+      z-index: 2; 
+    }
+  }
+  
+  @keyframes solarYearZ3{
+    0%{
+      z-index: -3;
+    }
+    49%{
+      z-index: -3;
+    }
+    50%{
+      z-index: 3; 
+    }
+  }
+  
+  @keyframes solarYearZ4{
+    0%{
+      z-index: -4;
+    }
+    49%{
+      z-index: -4;
+    }
+    50%{
+      z-index: 4; 
+    }
+  }
+  
+  @keyframes solarYearZ5{
+    0%{
+      z-index: -5;
+    }
+    49%{
+      z-index: -5;
+    }
+    50%{
+      z-index: 5; 
+    }
+  }
