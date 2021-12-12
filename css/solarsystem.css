@@ -5,7 +5,8 @@
     width: 100vw;
     overflow: hidden; 
     background-color: #012;
-    background-image: url(../StarySky.png);
+    background-image: url(../StarrySky.png);
+    background-blend-mode: screen; 
     background-repeat: repeat; 
   }
   
